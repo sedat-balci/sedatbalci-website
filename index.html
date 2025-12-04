@@ -1,9 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
-    <title>Vercel Deneme</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sedat Balcı | Profesyonel Portfolyo</title>
+    <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
-    <h1>Merhaba Vercel! Dağıtım Başarılı.</h1>
+
+    <header class="main-header">
+        <div class="logo">Sedat Balcı</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#hakkimda">Hakkımda</a></li>
+                <li><a href="#projeler">Projeler</a></li>
+                <li><a href="#beceriler">Beceriler</a></li> <li><a href="#iletisim">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1>Merhaba, ben Sedat Balcı.</h1>
+            <p>Full-Stack Web Geliştirici ve Dijital Çözümler Uzmanı.</p>
+            <a href="#projeler" class="btn-primary">Projelerimi İncele</a>
+        </div>
+    </section>
+
+    <section id="hakkimda" class="about-section">
+        <h2>Hakkımda</h2>
+        <p>
+            Ankara merkezli bir web geliştiricisiyim. Kullanıcı dostu ve hızlı web uygulamaları tasarlama konusunda 5 yılı aşkın deneyime sahibim. 
+            Teknik olarak ağırlıklı olarak React, Node.js ve modern CSS framework'leriyle çalışıyorum. 
+            Amacım, karmaşık sorunlara sade ve etkin dijital çözümler sunmaktır.
+        </p>
+        <p>
+            Boş zamanlarımda yeni teknolojileri öğrenmekten ve açık kaynak projelere katkıda bulunmaktan keyif alıyorum.
+        </p>
+        </section>
+    
+    <section id="beceriler" class="skills-section">
+        <h2>Temel Becerilerim</h2>
+        <div class="skills-list">
+            <div class="skill-card">HTML & CSS</div>
+            <div class="skill-card">JavaScript (ES6+)</div>
+            <div class="skill-card">React / Next.js</div>
+            <div class="skill-card">Node.js & Express</div>
+            <div class="skill-card">Git & Vercel Dağıtımı</div>
+            </div>
+    </section>
+
+    <section id="projeler" class="projects-section">
+        <h2>Öne Çıkan Projeler</h2>
+        <div class="project-list">
+            <div class="project-card">
+                <h3>E-Ticaret Platformu</h3>
+                <p>Modern bir arayüze sahip, tam işlevli bir e-ticaret sitesi. Sepet, ödeme entegrasyonu ve yönetim paneli içerir.</p>
+                <a href="#" target="_blank">Canlı Siteyi Gör</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Kurumsal Blog Uygulaması</h3>
+                <p>SEO uyumlu, hızlı yüklenen ve kullanımı kolay bir blog altyapısı. Dinamik içerik yönetimi destekler.</p>
+                <a href="#" target="_blank">Detaylı İncele</a>
+            </div>
+            
+            <div class="project-card">
+                <h3>Görev Yöneticisi (To-Do App)</h3>
+                <p>Kullanıcıların günlük görevlerini kolayca yönetebildiği, sürükle-bırak özellikli küçük bir web uygulaması.</p>
+                <a href="#" target="_blank">Demo</a>
+            </div>
+            
+            </div>
+    </section>
+
+    <section id="iletisim" class="contact-section">
+        <h2>İletişime Geçin</h2>
+        <p>Proje teklifleri, iş birlikleri veya aklınıza takılan her şey için bana ulaşabilirsiniz.</p>
+        
+        <form class="contact-form">
+            <input type="text" placeholder="Adınız Soyadınız" required>
+            <input type="email" placeholder="E-posta Adresiniz" required>
+            <textarea placeholder="Mesajınız..." rows="5" required></textarea>
+            <button type="submit" class="btn-primary">Gönder</button>
+        </form>
+    </section>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Sedat Balcı. Tüm hakları saklıdır.</p>
+    </footer>
+
 </body>
 </html>
