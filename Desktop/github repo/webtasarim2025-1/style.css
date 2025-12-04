@@ -1,0 +1,22 @@
+/*SELECTORS*/
+
+
+/* id si "adi" olan input seçildi*/
+#adi{ }
+.obje_1{ color:yellow;}
+/* classı çağırırken başına nokta koyarız*/
+
+/* ETİKET SEÇİCİLERİ*/
+div{ background-color: blueviolet;}
+/*dikkat! bu işlem sayfadaki bütün etiketlere aynı işlemi yapar*/
+
+/* evrensel seçiciler*/
+
+*{
+    margin:0;
+    padding:0;
+}
+/* bütün sayfaya global değişiklik yapar*/
+
+
+
