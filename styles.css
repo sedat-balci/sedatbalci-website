@@ -4,21 +4,22 @@
 
 /* Kök Renk Değişkenleri (Değişiklikleri buradan yapın) */
 :root {
-    --primary-color: #007bff; /* Ana Mavi/Lacivert */
-    --accent-color: #ffc107; /* Vurgu Rengi (Sarı/Turuncu) */
-    --text-color: #212529; /* Koyu Yazı Rengi */
-    --background-light: #f8f9fa; /* Açık Arka Plan */
-    --background-dark: #343a40; /* Koyu Arka Plan (Header, Footer) */
+    --primary-color: #ff007f; /* Şablonun Canlı Fuşya Rengi */
+    --accent-color: #ff007f; /* Aynı canlı rengi vurgu olarak kullanıyoruz */
+    --text-color-light: #f8f9fa; /* Açık Yazı Rengi */
+    --text-color-dark: #212529; /* Koyu Yazı Rengi */
+    --background-dark: #1a1a1a; /* Siyaha Yakın Koyu Arka Plan */
+    --background-section: #282828; /* Bölüm Arka Planı (Hafif Açık Koyu) */
     --font-primary: 'Poppins', sans-serif;
 }
 
-/* GENEL AYARLAR: Tarayıcının varsayılan stillerini sıfırlar ve temel fontu ayarlar */
+/* GENEL AYARLAR */
 body {
-    font-family: var(--font-primary); 
-    margin: 0; 
+    font-family: var(--font-primary);
+    margin: 0;
     padding: 0;
-    background-color: var(--background-light); 
-    color: var(--text-color); 
+    background-color: var(--background-dark); /* Koyu Arka Plan */
+    color: var(--text-color-light); /* Açık Yazı Rengi */
     line-height: 1.6;
 }
 
@@ -26,18 +27,19 @@ body {
 /* 2. HEADER & NAVİGASYON STİLLERİ */
 /* ========================================================== */
 .main-header {
-    background: var(--background-dark); 
-    color: #fff; 
-    padding: 1em 2em;
-    display: flex; 
-    justify-content: space-between; 
+    background: var(--background-dark);
+    padding: 1.5em 3em; /* Daha fazla boşluk */
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    box-shadow: none; /* Şablonda gölge yok */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Hafif çizgi */
 }
 
 .logo {
     font-size: 1.5em;
-    font-weight: bold;
+    font-weight: 700;
+    color: var(--primary-color); /* Logoya vurgu rengi */
 }
 
 .main-nav ul {
@@ -45,182 +47,215 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center;
 }
 
 .main-nav li {
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 .main-nav a {
-    color: #fff;
+    color: var(--text-color-light);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
 }
 
 .main-nav a:hover {
-    color: var(--accent-color); 
+    color: var(--accent-color);
+}
+
+/* "Hire Me" Butonu */
+.btn-hire-me {
+    background: var(--accent-color) !important;
+    color: var(--background-dark) !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-left: 30px;
 }
 
 /* ========================================================== */
-/* 3. HERO SECTION (Giriş) STİLLERİ */
+/* 3. HERO SECTION (Giriş) STİLLERİ - YAN YANA DÜZEN */
 /* ========================================================== */
 .hero-section {
-    background: var(--primary-color); 
-    color: #fff;
-    text-align: center;
-    padding: 100px 20px;
+    background: var(--background-dark);
+    color: var(--text-color-light);
+    padding: 80px 5%;
 }
 
-/* PROFİL RESMİ STİLLERİ */
+.hero-content-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* SOL TARAFTAKİ METİN BLOKU */
+.hero-text-block {
+    flex: 1; /* Alandaki mevcut boşluğu kullan */
+    max-width: 550px;
+    padding-right: 50px;
+}
+
+.greeting {
+    color: var(--accent-color);
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.hero-text-block h1 {
+    font-size: 3.5em;
+    margin-top: 0;
+    margin-bottom: 0.2em;
+    font-weight: 700;
+}
+
+.hero-text-block h2.subtitle {
+    font-size: 2em;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+/* SAĞ TARAFTAKİ RESİM BLOKU */
+.hero-img-block {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    justify-content: flex-end; /* Resmi sağa hizala */
+}
+
 .profile-img {
-    width: 180px; 
-    height: 180px; 
-    border-radius: 50%; /* Resmi mükemmel daire yapar */
-    object-fit: cover; 
-    margin-bottom: 20px;
-    border: 5px solid #fff; /* Beyaz çerçeve ekler */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* Şablondaki siyah beyaz ve pembe halka efekti */
+    filter: grayscale(100%); 
+    border: 10px solid var(--accent-color);
+    box-shadow: 0 0 50px rgba(255, 0, 127, 0.5); 
 }
 
-.hero-section h1 {
-    font-size: 3em;
-    margin-bottom: 0.5em;
+/* BUTONLAR */
+.hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
 }
 
 .btn-primary {
-    display: inline-block;
-    background: var(--background-dark); 
-    color: #fff;
-    padding: 10px 20px;
-    margin-top: 20px;
+    background: var(--accent-color);
+    color: var(--background-dark);
+    padding: 12px 25px;
+    font-weight: 600;
     text-decoration: none;
-    border-radius: 5px; 
+    border-radius: 5px;
     transition: background 0.3s;
 }
 
 .btn-primary:hover {
-    background: var(--accent-color); 
+    background: #ff3399; /* Hafif koyu pembe */
+}
+
+.btn-contact {
+    background: transparent;
+    border: 1px solid var(--text-color-light);
+    color: var(--text-color-light);
+    padding: 12px 25px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-contact:hover {
+    background: var(--text-color-light);
+    color: var(--background-dark);
+}
+
+/* SOSYAL İKONLAR (HERO ALTINDA) */
+.social-links-hero {
+    margin-top: 30px;
+}
+
+.social-links-hero a {
+    color: var(--text-color-light);
+    font-size: 1.3em;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.social-links-hero a:hover {
+    color: var(--accent-color);
 }
 
 /* ========================================================== */
 /* 4. İÇERİK BÖLÜMLERİ */
 /* ========================================================== */
 section {
-    padding: 40px 20px;
-    max-width: 1000px;
+    padding: 80px 5%; /* Daha fazla dikey boşluk */
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
+    background-color: var(--background-dark); /* Koyu tema */
 }
 
-.about-section {
-    background-color: #fff;
+section h2 {
+    color: var(--accent-color); /* Başlıkları vurgu renginde yapalım */
+    font-size: 2.5em;
+    margin-bottom: 1em;
 }
 
-.projects-section {
-    background-color: var(--background-light); 
+.about-section, .skills-section, .projects-section, .contact-section {
+    background-color: var(--background-dark); /* Koyu arka planı koru */
 }
 
-.project-list {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap; 
-    margin-top: 20px;
-}
-
+/* Proje Kartları (Şablona uygun olarak basitleştirildi) */
 .project-card {
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
+    background: var(--background-section); /* Hafif Açık Koyu Arka Plan */
+    border: none;
+    padding: 30px;
     margin: 10px;
     width: 300px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
     text-align: left;
+    border-radius: 8px;
+    transition: transform 0.3s;
 }
 
-/* BECERİLER BÖLÜMÜ */
-.skills-section {
-    background-color: #fff; 
+.project-card:hover {
+    transform: translateY(-5px);
 }
 
-.skills-list {
-    display: flex;
-    justify-content: center; 
-    flex-wrap: wrap;
-    gap: 15px; 
-    margin-top: 20px;
-}
-
+/* Beceri Kartları */
 .skill-card {
-    background: var(--background-light); 
-    padding: 10px 20px;
-    border-radius: 20px; 
-    border: 1px solid var(--primary-color); 
-    font-weight: bold;
-    color: var(--text-color); 
-    transition: background 0.3s, color 0.3s;
+    background: var(--background-section);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-color-light);
 }
 
 .skill-card:hover {
-    background: var(--primary-color); 
-    color: #fff;
+    background: var(--accent-color);
+    color: var(--background-dark);
 }
 
-/* İLETİŞİM BÖLÜMÜ (FORM) */
-.contact-section {
-    background-color: #fff;
-}
-
-.contact-form {
-    max-width: 600px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column; 
-    text-align: left;
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box; 
-}
-
-.contact-form textarea {
-    resize: vertical; 
-}
-
-.contact-form .btn-primary {
-    align-self: flex-start; 
+/* İLETİŞİM FORMU */
+.contact-form input, .contact-form textarea {
+    background: var(--background-section);
+    color: var(--text-color-light);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* ========================================================== */
 /* 5. FOOTER STİLLERİ */
 /* ========================================================== */
 .main-footer {
-    background: var(--background-dark); 
-    color: #fff;
-    text-align: center;
-    padding: 1em 0;
-    margin-top: 20px;
-}
-
-/* SOSYAL MEDYA İKON STİLLERİ */
-.social-links {
-    margin-bottom: 10px;
-}
-
-.social-links a {
-    color: #fff;
-    font-size: 1.5em;
-    margin: 0 10px;
-    transition: color 0.3s;
-}
-
-.social-links a:hover {
-    color: var(--accent-color); 
+    background: var(--background-dark);
+    padding: 2em 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
